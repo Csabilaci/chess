@@ -44,7 +44,7 @@ public class ChessResults {
             System.out.println("File not found!");
         }
         return competitorsList.stream()
-                .sorted(Collections.reverseOrder(Comparator.comparingInt(Competitors::getSum)))
+                .sorted((Comparator.comparingInt(Competitors::getSum).reversed()))
                 .map(Competitors::getName)
                 .collect(Collectors.toList());
     }
